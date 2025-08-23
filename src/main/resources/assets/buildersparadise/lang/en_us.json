@@ -1,0 +1,15 @@
+{
+  "item.buildersparadise.placeholder_item": "Item Template",
+  "item.buildersparadise.blueprint_item": "Blueprint",
+
+
+  "block.buildersparadise.placeholder_block": "Block Template",
+  "block.buildersparadise.builderstation_block": "Builder Station",
+
+
+  "creativetab.buildersparadise_tab": "Builder's Paradise Tab",
+
+
+  "item.buildersparadise.placeholder_item.no_valuables": "No Valuables Found"
+
+}
