@@ -22,6 +22,7 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.PLACEHOLDER_BLOCK.get());
 
                         output.accept(ModItems.PLACEHOLDER_ITEM.get());
+                        output.accept(ModItems.BLUEPRINT_ITEM.get());
 
                     }).build());
 

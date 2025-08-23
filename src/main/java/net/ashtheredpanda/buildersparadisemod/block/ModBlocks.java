@@ -1,6 +1,7 @@
 package net.ashtheredpanda.buildersparadisemod.block;
 
 import net.ashtheredpanda.buildersparadisemod.BuildersParadiseMod;
+import net.ashtheredpanda.buildersparadisemod.block.custom.BuilderStationBlock;
 import net.ashtheredpanda.buildersparadisemod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -25,7 +26,7 @@ public class ModBlocks {
             .IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> BUILDERSTATION_BLOCK = registerBlock("builderstation_block",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument
+            () -> new BuilderStationBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument
                     .IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
 
 

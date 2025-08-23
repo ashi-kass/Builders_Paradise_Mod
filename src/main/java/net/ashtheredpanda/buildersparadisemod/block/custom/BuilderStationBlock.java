@@ -27,9 +27,9 @@ import org.jetbrains.annotations.Nullable;
 public class BuilderStationBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    protected BuilderStationBlock(Properties pProperties) { super(pProperties); }
+    public BuilderStationBlock(Properties pProperties) { super(pProperties); }
 
-    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
+    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
 
 
     public BlockState rotate(BlockState pState, Rotation pRot) {

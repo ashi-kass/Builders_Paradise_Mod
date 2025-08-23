@@ -35,7 +35,7 @@ public class BuilderStationBlockEntity extends BlockEntity implements MenuProvid
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.getItem() == Items.PAPER.getName(stack);
+                case 0 -> stack.getItem() == Items.PAPER;
                 case 1 -> false;
                 default -> super.isItemValid(slot, stack);
             };
@@ -120,8 +120,9 @@ public class BuilderStationBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
-        super.saveAdditional(pTag);
         pTag.put("inventory", itemHandler.serializeNBT());
+
+        super.saveAdditional(pTag);
     }
 
     @Override

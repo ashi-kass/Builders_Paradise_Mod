@@ -14,7 +14,7 @@ public class ModBlockEntities {
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, BuildersParadiseMod.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<BuilderStationBlockEntity>> BUILDERSTATION_BE =
-            BLOCK_ENTITIES.register("builderstation_be", () ->
+            BLOCK_ENTITIES.register("builderstation_blockentity", () ->
                     BlockEntityType.Builder.of(BuilderStationBlockEntity::new,
                             ModBlocks.BUILDERSTATION_BLOCK.get()).build(null));
 
