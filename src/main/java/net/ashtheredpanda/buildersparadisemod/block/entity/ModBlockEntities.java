@@ -18,6 +18,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(BuilderStationBlockEntity::new,
                             ModBlocks.BUILDERSTATION_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<PlaceHolderBlockEntity>> PLACEHOLDER_BE =
+            BLOCK_ENTITIES.register("placeholder_blockentity", () ->
+                    BlockEntityType.Builder.of(PlaceHolderBlockEntity::new,
+                            ModBlocks.PLACEHOLDER_BLOCK.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

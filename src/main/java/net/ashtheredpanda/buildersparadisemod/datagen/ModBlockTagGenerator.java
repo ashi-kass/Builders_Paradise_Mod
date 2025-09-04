@@ -22,6 +22,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
                 .add(ModBlocks.BUILDERSTATION_BLOCK.get());
 
+        this.tag(ModTags.Blocks.BLOCK_IS_PLACEHOLDER)
+                .add(ModBlocks.PLACEHOLDER_BLOCK.get());
+
     }
 
     @Override

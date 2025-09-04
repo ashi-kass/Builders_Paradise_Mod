@@ -2,6 +2,7 @@ package net.ashtheredpanda.buildersparadisemod.block;
 
 import net.ashtheredpanda.buildersparadisemod.BuildersParadiseMod;
 import net.ashtheredpanda.buildersparadisemod.block.custom.BuilderStationBlock;
+import net.ashtheredpanda.buildersparadisemod.block.custom.PlaceHolderBlock;
 import net.ashtheredpanda.buildersparadisemod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -21,13 +22,12 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, BuildersParadiseMod.MOD_ID);
 
-    public static final RegistryObject<Block> PLACEHOLDER_BLOCK = registerBlock("placeholder_block",
-            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument
-            .IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
-
     public static final RegistryObject<Block> BUILDERSTATION_BLOCK = registerBlock("builderstation_block",
             () -> new BuilderStationBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument
                     .IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> PLACEHOLDER_BLOCK = registerBlock("placeholder_block",
+            () -> new PlaceHolderBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.GLASS)));
 
 
 

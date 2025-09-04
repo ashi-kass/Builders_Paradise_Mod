@@ -1,15 +1,16 @@
 {
   "item.buildersparadise.placeholder_item": "Item Template",
+  "item.buildersparadise.placeholder_item.no_valuables": "No Valuables Found",
+
   "item.buildersparadise.blueprint_item": "Blueprint",
+  "item.buildersparadise.blueprint_item.no_placeholder": "No Block Template Found",
+  "item.buildersparadise.blueprint_item.placeholder": "Block Template Set",
 
 
   "block.buildersparadise.placeholder_block": "Block Template",
+
   "block.buildersparadise.builderstation_block": "Builder Station",
 
 
-  "creativetab.buildersparadise_tab": "Builder's Paradise Tab",
-
-
-  "item.buildersparadise.placeholder_item.no_valuables": "No Valuables Found"
-
+  "creativetab.buildersparadise_tab": "Builder's Paradise Tab"
 }
