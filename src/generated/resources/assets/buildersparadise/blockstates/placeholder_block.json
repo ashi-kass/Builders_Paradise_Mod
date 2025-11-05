@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "buildersparadise:block/placeholder_block_on"
+    },
+    "facing=north": {
+      "model": "buildersparadise:block/placeholder_block_on"
+    },
+    "facing=south": {
+      "model": "buildersparadise:block/placeholder_block_on"
+    },
+    "facing=west": {
+      "model": "buildersparadise:block/placeholder_block_on"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// 1.20.1	2025-09-05T23:54:45.3623221	Block States: buildersparadise
+9302973742025e903e4b48993483911aadc0219b assets/buildersparadise/blockstates/builderstation_block.json
+d11dfd401a27f990a6f3fbe78973cc8a88d64007 assets/buildersparadise/blockstates/placeholder_block.json
+a27ee01789d66a913da35ec3369b9205024fb8c8 assets/buildersparadise/models/block/builderstation_block.json
+7b706b79301b09a9243f29e4c08ac615802d2f1c assets/buildersparadise/models/block/placeholder_block_off.json
+cd45e293b9ea6bab2d5174664593e383499ff263 assets/buildersparadise/models/block/placeholder_block_on.json
+19d0e3c5890ccd31473b4f61d33abfc753436ea4 assets/buildersparadise/models/item/builderstation_block.json
+ef0aa1e7e460ad56b1722c6fb259f7f9985221c7 assets/buildersparadise/models/item/placeholder_block.json
