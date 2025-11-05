@@ -20,28 +20,31 @@ public class BlueprintItem extends Item {
     public BlueprintItem(Properties pProperties) {
         super(pProperties);
     }
-    @NotNull
-    public InteractionResult useOn(Level pLevel, BlockPos pPos) {
-        if (pLevel.isClientSide()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if(blockEntity instanceof PlaceHolderBlockEntity) {
-                ((PlaceHolderBlockEntity) blockEntity).textureName = "placeholder_block_on";
-            } else {
-                throw new IllegalStateException("This isnt a Placeholder Block");
-            }
-        }
-        return InteractionResult.SUCCESS;
+
+    // fields
+    String textureName = "bananan";
+    String blockDescription = "yummy";
+
+    public String getTextureName() {
+        return this.textureName;
+    }
+    public String getBlockDescription() {
+        return this.blockDescription;
+    }
+    /*
+    public String getTextureName() {
+        return this.textureName;
+    }
+    public String getTextureName() {
+        return this.textureName;
+    }
+    */
+    public void setTextureName(String TextureName) {
+        textureName = TextureName;
     }
 
-    private boolean isPlaceholderBlock(BlockState blockstate) {
-        return blockstate.is(ModTags.Blocks.BLOCK_IS_PLACEHOLDER);
+    public void setBlockDescription(String BlockDescription) {
+        blockDescription = BlockDescription;
     }
 
-    private void outputPlaceholderFound(Player player) {
-        player.sendSystemMessage(Component.translatable("item.buildersparadise.blueprint_item.placeholder"));
-    }
-
-    private void outputNoPlaceholderFound(Player player) {
-        player.sendSystemMessage(Component.translatable("item.buildersparadise.blueprint_item.no_placeholder"));
-    }
 }

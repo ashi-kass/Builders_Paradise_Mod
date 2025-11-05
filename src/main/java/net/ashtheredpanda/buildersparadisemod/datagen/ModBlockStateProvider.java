@@ -29,8 +29,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         });
 
-        simpleBlockItem(blockRegistryObject.get(), models().cubeAll("",
-                ResourceLocation.fromNamespaceAndPath(BuildersParadiseMod.MOD_ID, "block/" + "")));
+        simpleBlockItem(blockRegistryObject.get(), models().cubeAll("placeholder_block_off",
+                ResourceLocation.fromNamespaceAndPath(BuildersParadiseMod.MOD_ID, "block/" + "placeholder_block_off")));
 
     }
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
