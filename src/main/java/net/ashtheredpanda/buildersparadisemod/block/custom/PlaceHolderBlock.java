@@ -1,7 +1,9 @@
 package net.ashtheredpanda.buildersparadisemod.block.custom;
 
 import net.ashtheredpanda.buildersparadisemod.BuildersParadiseMod;
+import net.ashtheredpanda.buildersparadisemod.block.entity.ModBlockEntities;
 import net.ashtheredpanda.buildersparadisemod.block.entity.PlaceHolderBlockEntity;
+import net.ashtheredpanda.buildersparadisemod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -90,7 +92,7 @@ public class PlaceHolderBlock extends BaseEntityBlock {
     public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new PlaceHolderBlockEntity(pPos, pState);
     }
-
+/*
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         if(pLevel.isClientSide()) {
@@ -99,4 +101,5 @@ public class PlaceHolderBlock extends BaseEntityBlock {
         return createTickerHelper(pBlockEntityType, ModBlockEntities.PLACEHOLDER_BE.get(), (pLevel1, pPos, pState1, pBlockEntity)
                 -> pBlockEntity.tick(pLevel1, pPos, pState1));
     }
+*/
 }
