@@ -46,5 +46,18 @@ public class BlueprintItem extends Item {
     public void setBlockDescription(String BlockDescription) {
         blockDescription = BlockDescription;
     }
+//
+//    @NotNull
+//    public InteractionResult useOn(Level pLevel, BlockPos pPos) {
+//        if (pLevel.isClientSide()) {
+//            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+//            if(blockEntity instanceof PlaceHolderBlockEntity) {
+//                ((PlaceHolderBlockEntity) blockEntity).textureName = "placeholder_block_on";
+//            } else {
+//                throw new IllegalStateException("This Block isn't a Placeholder Block");
+//            }
+//        }
+//        return InteractionResult.SUCCESS;
+//    }
 
 }

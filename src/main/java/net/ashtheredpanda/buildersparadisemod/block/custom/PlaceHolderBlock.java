@@ -1,11 +1,10 @@
 package net.ashtheredpanda.buildersparadisemod.block.custom;
 
-import net.ashtheredpanda.buildersparadisemod.block.entity.ModBlockEntities;
+import net.ashtheredpanda.buildersparadisemod.BuildersParadiseMod;
 import net.ashtheredpanda.buildersparadisemod.block.entity.PlaceHolderBlockEntity;
-import net.ashtheredpanda.buildersparadisemod.item.ModItems;
-import net.ashtheredpanda.buildersparadisemod.item.custom.BlueprintItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -66,14 +65,8 @@ public class PlaceHolderBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if(pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if(blockEntity instanceof PlaceHolderBlockEntity) {
-                //blockEntity.
-            }
-        }
-        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
     }
 
     @Override
@@ -87,7 +80,7 @@ public class PlaceHolderBlock extends BaseEntityBlock {
                     pPlayer.sendSystemMessage(Component.translatable("You Need To Use a Blueprint"));
                 }
             } else {
-                throw new IllegalStateException("Our Container Is Missing!");
+                throw new IllegalStateException("Something Went Wrong!");
             }
         }
         return InteractionResult.SUCCESS;
