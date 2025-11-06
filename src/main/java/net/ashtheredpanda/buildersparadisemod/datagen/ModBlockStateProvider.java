@@ -23,14 +23,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void placeholderBlock(RegistryObject<Block> blockRegistryObject) {
-        getVariantBuilder(blockRegistryObject.get()).forAllStates(state -> {
-                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("placeholder_block_on",
-                        ResourceLocation.fromNamespaceAndPath(BuildersParadiseMod.MOD_ID, "block/" + "placeholder_block_on")))};
+        getVariantBuilder(blockRegistryObject.get()).forAllStates(state ->  new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("placeholder_block",
+                        ResourceLocation.fromNamespaceAndPath( BuildersParadiseMod.MOD_ID, "block/" + "placeholder_block_off")))
 
         });
 
-        simpleBlockItem(blockRegistryObject.get(), models().cubeAll("",
-                ResourceLocation.fromNamespaceAndPath(BuildersParadiseMod.MOD_ID, "block/" + "")));
+        simpleBlockItem(blockRegistryObject.get(), models().cubeAll("placeholder_block",
+                ResourceLocation.fromNamespaceAndPath( BuildersParadiseMod.MOD_ID, "block/" + "placeholder_block_off")));
 
     }
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

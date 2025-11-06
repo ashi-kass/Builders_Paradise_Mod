@@ -39,7 +39,7 @@ public class BuilderStationScreen extends AbstractContainerScreen<BuilderStation
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE,x + 86, y + 31, 176, 0, 8, menu.getScaleProgress());
+            guiGraphics.blit(TEXTURE,x + 86, y + 30, 176, 0, 8, menu.getScaleProgress());
         }
     }
 
