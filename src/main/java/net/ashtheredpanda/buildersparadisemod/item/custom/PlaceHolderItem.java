@@ -10,6 +10,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class PlaceHolderItem extends Item {
     public PlaceHolderItem(Properties pProperties) {
@@ -17,7 +20,7 @@ public class PlaceHolderItem extends Item {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext pContext) {
+    public @NotNull InteractionResult useOn(UseOnContext pContext) {
 
         if (pContext.getLevel().isClientSide()) {
             BlockPos positionClicked = pContext.getClickedPos();
@@ -28,7 +31,7 @@ public class PlaceHolderItem extends Item {
                 BlockState blockState = pContext.getLevel().getBlockState(positionClicked.below(i));
 
                 if (isValuableBlock(blockState)) {
-                    outputValuableCoordinates(positionClicked.below(i), player, blockState.getBlock());
+                    outputValuableCoordinates(positionClicked.below(i), Objects.requireNonNull(player), blockState.getBlock());
                     foundBlock = true;
 
                     break;
@@ -36,7 +39,7 @@ public class PlaceHolderItem extends Item {
             }
 
             if (!foundBlock) {
-                outputNoValuableFound(player);
+                outputNoValuableFound(Objects.requireNonNull(player));
             }
         }
 

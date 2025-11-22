@@ -19,7 +19,7 @@ public class ModItems {
             () -> new PlaceHolderItem(new Item.Properties()));
 
     public static final RegistryObject<Item> BLUEPRINT_ITEM = ITEMS.register("blueprint_item",
-            () -> new BlueprintItem(new Item.Properties()));
+            () -> new BlueprintItem(new Item.Properties().stacksTo(1)));
 
 
 

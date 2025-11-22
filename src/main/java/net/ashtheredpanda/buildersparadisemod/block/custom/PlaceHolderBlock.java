@@ -1,24 +1,23 @@
 package net.ashtheredpanda.buildersparadisemod.block.custom;
 
-import net.ashtheredpanda.buildersparadisemod.BuildersParadiseMod;
-import net.ashtheredpanda.buildersparadisemod.block.entity.ModBlockEntities;
+import net.ashtheredpanda.buildersparadisemod.block.ModBlocks;
 import net.ashtheredpanda.buildersparadisemod.block.entity.PlaceHolderBlockEntity;
 import net.ashtheredpanda.buildersparadisemod.item.ModItems;
+import net.ashtheredpanda.buildersparadisemod.item.custom.BlueprintItem;
+import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -32,7 +31,8 @@ public class PlaceHolderBlock extends BaseEntityBlock {
 
 
     // Class Fields
-
+    public String jsonName = "placeholder_block_off";
+    public String blockDescription = "Block Template";
 
     // Class Properties
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -41,6 +41,14 @@ public class PlaceHolderBlock extends BaseEntityBlock {
     public PlaceHolderBlock(Properties pProperties) {
         super(pProperties);
     }
+
+    // Field Getters
+    public String getJsonName() { return this.jsonName; }
+    public String getBlockDescription() { return this.blockDescription; }
+
+    // Field Setters
+    public void setJsonName(String JsonName) { this.jsonName = JsonName; }
+    public void setBlockDescription(String BlockDescription) { this.blockDescription = BlockDescription; }
 
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
 
@@ -74,9 +82,13 @@ public class PlaceHolderBlock extends BaseEntityBlock {
     @Override
     public @NotNull InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if(!pLevel.isClientSide()) {
-            BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if (entity instanceof PlaceHolderBlockEntity && pHand == InteractionHand.MAIN_HAND) {
-                if (pPlayer.getItemInHand(pHand.MAIN_HAND).is((ModItems.BLUEPRINT_ITEM.get()))) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            if (blockEntity instanceof PlaceHolderBlockEntity && pHand == InteractionHand.MAIN_HAND) {
+                if (pPlayer.getItemInHand(InteractionHand.MAIN_HAND).is((ModItems.BLUEPRINT_ITEM.get()))) {
+
+                    //pPlayer.sendSystemMessage(Component.translatable(((PlaceHolderBlockEntity) blockEntity).getJsonName()));
+
+                    //pPlayer.sendSystemMessage(Component.translatable(((PlaceHolderBlockEntity) blockEntity).getBlockDescription()));
                     pPlayer.sendSystemMessage(Component.translatable("Placeholder Block Changed"));
                 } else {
                     pPlayer.sendSystemMessage(Component.translatable("You Need To Use a Blueprint"));
@@ -92,14 +104,5 @@ public class PlaceHolderBlock extends BaseEntityBlock {
     public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new PlaceHolderBlockEntity(pPos, pState);
     }
-/*
-    @Override
-    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        if(pLevel.isClientSide()) {
-            return null;
-        }
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.PLACEHOLDER_BE.get(), (pLevel1, pPos, pState1, pBlockEntity)
-                -> pBlockEntity.tick(pLevel1, pPos, pState1));
-    }
-*/
+
 }
