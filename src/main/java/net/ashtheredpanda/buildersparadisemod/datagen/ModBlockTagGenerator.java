@@ -1,8 +1,6 @@
 package net.ashtheredpanda.buildersparadisemod.datagen;
 
 import net.ashtheredpanda.buildersparadisemod.BuildersParadiseMod;
-import net.ashtheredpanda.buildersparadisemod.block.ModBlocks;
-import net.ashtheredpanda.buildersparadisemod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -19,11 +17,6 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
-                .add(ModBlocks.BUILDERSTATION_BLOCK.get());
-
-        this.tag(ModTags.Blocks.BLOCK_IS_PLACEHOLDER)
-                .add(ModBlocks.PLACEHOLDER_BLOCK.get());
 
     }
 
