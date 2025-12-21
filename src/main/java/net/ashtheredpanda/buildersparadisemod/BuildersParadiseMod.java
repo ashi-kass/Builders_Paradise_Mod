@@ -1,13 +1,8 @@
 package net.ashtheredpanda.buildersparadisemod;
 
 import com.mojang.logging.LogUtils;
-import net.ashtheredpanda.buildersparadisemod.block.ModBlocks;
-import net.ashtheredpanda.buildersparadisemod.block.entity.ModBlockEntities;
-import net.ashtheredpanda.buildersparadisemod.item.ModCreativeModeTab;
-import net.ashtheredpanda.buildersparadisemod.item.ModItems;
-import net.ashtheredpanda.buildersparadisemod.screen.BuilderStationScreen;
-import net.ashtheredpanda.buildersparadisemod.screen.ModMenuTypes;
-import net.minecraft.client.gui.screens.MenuScreens;
+import net.ashtheredpanda.buildersparadisemod.oldgpt.screen.BuilderStationScreen;
+import net.ashtheredpanda.buildersparadisemod.registry.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -64,6 +59,7 @@ public class BuildersParadiseMod {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+        //BlueprintManager.load(event.getServer());
 
     }
 
@@ -72,10 +68,7 @@ public class BuildersParadiseMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(() -> {
-
-                MenuScreens.register(ModMenuTypes.BUILDERSTATION_MENU.get(), BuilderStationScreen::new);
-            });
+            //event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.BUILDERSTATION_MENU.get(), BuilderStationScreen::new));
         }
     }
 }

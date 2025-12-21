@@ -1,0 +1,10 @@
+{
+  "shape": "slab",
+  "color": "#6B6B6B",
+  "description_key": "block.buildersparadise.blueprint.slab",
+  "width": 1.0,
+  "depth": 1.0,
+  "height": 0.5,
+  "can_sit": false,
+  "inventory_slots": 0
+}

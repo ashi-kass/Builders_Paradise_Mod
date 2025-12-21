@@ -12,5 +12,7 @@
   "block.buildersparadise.builderstation_block": "Builder Station",
 
 
-  "creativetab.buildersparadise_tab": "Builder's Paradise Tab"
+  "creativetab.buildersparadise_tab": "Builder's Paradise Tab",
+  "item.buildersparadise.blueprint.tooltip.id": "ToolTips cus you know",
+  "item.buildersparadise.blueprint.tooltip.empty": "Your mama"
 }

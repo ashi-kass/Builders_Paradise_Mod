@@ -1,0 +1,10 @@
+{
+  "shape": "stair_straight",
+  "color": "#FFAA00",
+  "description_key": "block.buildersparadise.blueprint.stair",
+  "width": 1.0,
+  "depth": 1.0,
+  "height": 1.0,
+  "can_sit": true,
+  "inventory_slots": 0
+}
